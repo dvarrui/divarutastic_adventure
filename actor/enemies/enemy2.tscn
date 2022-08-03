@@ -23,15 +23,14 @@ animations = [ {
 
 [node name="enemy2" type="Area2D"]
 script = ExtResource( 2 )
-speed = 50
 
 [node name="anim" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -4 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
+offset = Vector2( 3, 0 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
-position = Vector2( -5, 0 )
 shape = SubResource( 7 )
 
 [connection signal="body_entered" from="." to="." method="_on_enemy2_body_entered"]
