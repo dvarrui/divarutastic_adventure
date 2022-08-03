@@ -25,18 +25,19 @@ func change_level(dir):
 		pass
 
 	var room_name = "res://levels/menu.tscn"
+	var offset = 8
 	if dir == "N":
 		room_name = room_n
-		MyConfig.position.y = MyConfig.screen_size().y
+		MyConfig.position.y = MyConfig.screen_size().y - offset
 	elif dir == "S":
 		room_name = room_s
-		MyConfig.position.y = 0
+		MyConfig.position.y = offset
 	elif dir == "E":
 		room_name = room_e
-		MyConfig.position.x = 0
+		MyConfig.position.x = offset
 	elif dir == "W":
 		room_name = room_w
-		MyConfig.position.x = MyConfig.screen_size().x
+		MyConfig.position.x = MyConfig.screen_size().x -offset
 		
 	if room_name.length() == 0:
 		get_tree().change_scene("res://levels/menu.tscn")

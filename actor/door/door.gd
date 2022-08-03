@@ -1,8 +1,10 @@
 extends Node2D
 
 export var keys = 1
+var state = "closed"
 
 func _ready():
+	$anim.play(state)
 	$anim/keys.text = str(keys)
 
 func _on_detect_body_entered(body):
@@ -10,7 +12,7 @@ func _on_detect_body_entered(body):
 			update_keys()
 
 func _physics_process(delta):
-	if keys == 0:
+	if keys == 0 and state == "closed":
 		open() 
 
 func update_keys():
@@ -22,6 +24,7 @@ func update_keys():
 	level.update_keys(0)
 
 func open():
-	$anim.play("open")
-	$anim.play("opened")
+	$anim.play("opening")
 	$body/shape.set_disabled(true)
+	$anim.play("opened")
+	state = "opened"
