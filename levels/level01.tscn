@@ -98,7 +98,7 @@ position = Vector2( 975, 274 )
 
 [node name="npc" parent="enemies" instance=ExtResource( 12 )]
 position = Vector2( 404, 432 )
-text = "Hola!"
+text = "¡Coge la llave!"
 
 [node name="player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 110, 465 )
