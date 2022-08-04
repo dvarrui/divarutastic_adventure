@@ -60,9 +60,9 @@ __meta__ = {
 }
 
 [node name="v_container" type="VBoxContainer" parent="texts/margin"]
-margin_top = 84.0
+margin_top = 68.0
 margin_right = 769.0
-margin_bottom = 513.0
+margin_bottom = 529.0
 size_flags_vertical = 4
 alignment = 1
 __meta__ = {
@@ -95,13 +95,14 @@ __meta__ = {
 [node name="authors" type="Label" parent="texts/margin/v_container"]
 margin_top = 208.0
 margin_right = 769.0
-margin_bottom = 429.0
+margin_bottom = 461.0
 custom_fonts/font = SubResource( 4 )
 text = "
 
 
 Aaron Vargas Jorge - Art and Game Desing
 David Vargas Ruiz - Programing
+Godot Game Engine
 
 Copyright (c) 2022"
 align = 1

@@ -11,10 +11,11 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]
-scale = Vector2( 0.994737, 1.22629 )
+position = Vector2( -0.207897, 0 )
+scale = Vector2( 0.981743, 1.22629 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 192.623, 49.0125, 31.6891, 7.92228 )
+region_rect = Rect2( 225.25, 0.25, 32, 7 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2( -0.25, -1.5 )

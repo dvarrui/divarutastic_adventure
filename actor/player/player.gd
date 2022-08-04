@@ -162,6 +162,8 @@ func _detect_screen_exited():
 func _on_detect_area_entered(area):
 	if area.is_in_group("stairs"):
 		on_stairs = true
+	if area.is_in_group("enemy"):
+		game_over()
 
 func _on_detect_area_exited(area):
 	if area.is_in_group("stairs"):
