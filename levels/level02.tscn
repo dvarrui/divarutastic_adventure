@@ -1,0 +1,137 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://levels/level.gd" type="Script" id=1]
+[ext_resource path="res://environ/tileset/tileset-wall.tres" type="TileSet" id=2]
+[ext_resource path="res://environ/tileset/tileset-decorator.tres" type="TileSet" id=3]
+[ext_resource path="res://actor/npc/npc.tscn" type="PackedScene" id=4]
+[ext_resource path="res://actor/door/door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://actor/player/player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/music/01-bach-little_fugue.mp3" type="AudioStream" id=7]
+[ext_resource path="res://actor/key/key.tscn" type="PackedScene" id=8]
+[ext_resource path="res://actor/enemies/enemy3.tscn" type="PackedScene" id=9]
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/font/chava/Chava-Regular.otf"
+
+[sub_resource type="DynamicFont" id=6]
+font_data = SubResource( 5 )
+
+[node name="level" type="Node2D"]
+script = ExtResource( 1 )
+room_n = "menu"
+room_s = "menu"
+room_e = "level03"
+room_w = "menu"
+
+[node name="tilemap" type="Node2D" parent="."]
+
+[node name="wall" type="TileMap" parent="tilemap"]
+scale = Vector2( 2, 2 )
+z_index = 2
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 0, 0, 65558, 0, 0, 65559, 0, 0, 65560, 0, 0, 65561, 0, 0, 65562, 0, 0, 65563, 0, 0, 65564, 0, 0, 65565, 0, 0, 65566, 0, 0, 65567, 0, 0, 131072, 0, 0, 131103, 0, 0, 196608, 0, 0, 196639, 0, 0, 262144, 0, 0, 262167, 4, 0, 262168, 4, 0, 262169, 4, 0, 262170, 5, 0, 262175, 0, 0, 327680, 0, 0, 327711, 0, 0, 393216, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524306, 5, 0, 524307, 5, 0, 524308, 5, 0, 524314, 0, 0, 524315, 0, 0, 524316, 0, 0, 524317, 0, 0, 524318, 0, 0, 524319, 0, 0, 589824, 0, 0, 589845, 0, 0, 589846, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 0, 0, 655360, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655391, 0, 0, 720896, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720927, 0, 0, 786432, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786463, 0, 0, 851974, 0, 0, 851975, 0, 0, 851981, 0, 0, 851982, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851993, 0, 0, 851994, 0, 0, 851999, 0, 0, 917510, 0, 0, 917511, 0, 0, 917517, 0, 0, 917518, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917533, 0, 0, 917534, 0, 0, 917535, 0, 0, 1048575, 13, 0, 983040, 0, 0, 983041, 0, 0, 983042, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983046, 0, 0, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983053, 0, 0, 983054, 0, 0, 983055, 0, 0, 983056, 0, 0, 983057, 0, 0, 983058, 0, 0, 983059, 0, 0, 983060, 0, 0, 983061, 0, 0, 983062, 0, 0, 983071, 0, 0, 1048598, 0, 0, 1048607, 0, 0, 1114134, 0, 0, 1114135, 0, 0, 1114136, 0, 0, 1114137, 0, 0, 1114138, 0, 0, 1114139, 0, 0, 1114140, 0, 0, 1114141, 0, 0, 1114142, 0, 0, 1114143, 0, 0 )
+
+[node name="back" type="TileMap" parent="tilemap"]
+modulate = Color( 0.32549, 0.32549, 0.32549, 1 )
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 851976, 0, 0, 983049, 5, 0, 1900589, 3, 0 )
+
+[node name="front" type="TileMap" parent="tilemap"]
+scale = Vector2( 2, 2 )
+z_index = 10
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 1048599, 7, 0, 1048600, 7, 0, 1048601, 7, 0, 1048602, 7, 0, 1048603, 7, 0, 1048604, 7, 0, 1048605, 7, 0, 1048606, 7, 0, 1900589, 3, 0 )
+
+[node name="canvas" type="CanvasLayer" parent="tilemap"]
+layer = -2
+
+[node name="color" type="ColorRect" parent="tilemap/canvas"]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="effects" type="Node2D" parent="."]
+
+[node name="music" type="AudioStreamPlayer" parent="effects"]
+stream = ExtResource( 7 )
+volume_db = -20.091
+autoplay = true
+
+[node name="keys" type="Label" parent="effects"]
+margin_left = 24.0
+margin_top = 560.0
+margin_right = 94.0
+margin_bottom = 580.0
+custom_fonts/font = SubResource( 6 )
+text = "Keys: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="temp" type="Node2D" parent="."]
+
+[node name="platforms" type="Node2D" parent="."]
+
+[node name="door" parent="platforms" instance=ExtResource( 5 )]
+position = Vector2( 1007, 225 )
+keys = 3
+
+[node name="keys" type="Node2D" parent="."]
+
+[node name="coin2" parent="keys" instance=ExtResource( 8 )]
+position = Vector2( 976, 432 )
+
+[node name="coin" parent="keys" instance=ExtResource( 8 )]
+position = Vector2( 399, 462 )
+
+[node name="coin3" parent="keys" instance=ExtResource( 8 )]
+position = Vector2( 538, 280 )
+
+[node name="enemies" type="Node2D" parent="."]
+position = Vector2( 0, -1 )
+
+[node name="npc" parent="enemies" instance=ExtResource( 4 )]
+position = Vector2( 397, 333 )
+text = "¡Cuidado con los pinchos!"
+
+[node name="pinchos" type="Node2D" parent="enemies"]
+
+[node name="enemy3" parent="enemies/pinchos" instance=ExtResource( 9 )]
+position = Vector2( 496, 470 )
+
+[node name="enemy4" parent="enemies/pinchos" instance=ExtResource( 9 )]
+position = Vector2( 529, 470 )
+
+[node name="enemy5" parent="enemies/pinchos" instance=ExtResource( 9 )]
+position = Vector2( 562, 470 )
+
+[node name="pinchos2" type="Node2D" parent="enemies"]
+position = Vector2( 300, 60 )
+
+[node name="enemy3" parent="enemies/pinchos2" instance=ExtResource( 9 )]
+position = Vector2( 483, 468 )
+
+[node name="enemy4" parent="enemies/pinchos2" instance=ExtResource( 9 )]
+position = Vector2( 563, 468 )
+
+[node name="enemy5" parent="enemies/pinchos2" instance=ExtResource( 9 )]
+position = Vector2( 650, 469 )
+
+[node name="player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 47, 464 )
+z_index = 4
