@@ -10,7 +10,7 @@ func _ready():
 func _on_detect_body_entered(body):
 	if body.is_in_group("player"):
 		$detect/dialog.visible = true
-
+		$detect/arrow.visible = false 
 
 func _on_detect_body_exited(body):
 	if body.is_in_group("player"):

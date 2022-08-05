@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/tileset.png" type="Texture" id=1]
 [ext_resource path="res://actor/npc/npc.gd" type="Script" id=2]
@@ -23,6 +23,22 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=4]
 radius = 16.0
 
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 64, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 64, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
 [node name="npc" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -30,6 +46,7 @@ script = ExtResource( 2 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="detect" type="Area2D" parent="."]
@@ -41,6 +58,12 @@ shape = SubResource( 4 )
 visible = false
 position = Vector2( -150, -100 )
 z_index = 10
+
+[node name="arrow" type="AnimatedSprite" parent="detect"]
+scale = Vector2( 2, 2 )
+frames = SubResource( 9 )
+playing = true
+offset = Vector2( 0, -16 )
 
 [connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]
 [connection signal="body_exited" from="detect" to="." method="_on_detect_body_exited"]
