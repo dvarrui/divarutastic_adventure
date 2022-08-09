@@ -46,7 +46,6 @@ script = ExtResource( 2 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="detect" type="Area2D" parent="."]
@@ -60,8 +59,10 @@ position = Vector2( -150, -100 )
 z_index = 10
 
 [node name="arrow" type="AnimatedSprite" parent="detect"]
+visible = false
 scale = Vector2( 2, 2 )
 frames = SubResource( 9 )
+frame = 1
 playing = true
 offset = Vector2( 0, -16 )
 

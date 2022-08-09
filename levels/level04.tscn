@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://environ/tileset/tileset-wall.tres" type="TileSet" id=1]
 [ext_resource path="res://levels/level.gd" type="Script" id=2]
@@ -14,6 +14,21 @@ font_path = "res://assets/font/chava/Chava-Regular.otf"
 
 [sub_resource type="DynamicFont" id=6]
 font_data = SubResource( 5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 17.0938, 7 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 30, 6 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 6, 111.75 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 16.0625, 111.75 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 30.1875, 2.5 )
 
 [node name="level" type="Node2D"]
 script = ExtResource( 2 )
@@ -42,7 +57,7 @@ tile_set = ExtResource( 6 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 131092, 7, 0, 196628, 7, 0, 262164, 7, 0, 327700, 7, 0, 393236, 7, 0, 458772, 7, 0, 524308, 7, 0, 589824, 7, 0, 589825, 7, 0, 589828, 7, 0, 589829, 7, 0, 589830, 7, 0, 589831, 7, 0, 589832, 7, 0, 589833, 7, 0, 589834, 7, 0, 589835, 7, 0, 589836, 7, 0, 589844, 7, 0, 655380, 7, 0, 720916, 7, 0, 786452, 7, 0, 851976, 0, 0, 983049, 5, 0, 1900589, 3, 0 )
+tile_data = PoolIntArray( 131092, 7, 0, 196628, 7, 0, 262164, 7, 0, 327700, 7, 0, 393236, 7, 0, 458772, 7, 0, 524308, 7, 0, 589824, 7, 0, 589825, 7, 0, 589828, 7, 0, 589829, 7, 0, 589830, 7, 0, 589831, 7, 0, 589832, 7, 0, 589833, 7, 0, 589834, 7, 0, 589835, 7, 0, 589836, 7, 0, 589844, 7, 0, 655380, 7, 0, 720916, 7, 0, 786452, 7, 0, 1900589, 3, 0 )
 
 [node name="front" type="TileMap" parent="tilemap"]
 scale = Vector2( 2, 2 )
@@ -72,10 +87,10 @@ volume_db = -20.091
 autoplay = true
 
 [node name="keys" type="Label" parent="effects"]
-margin_left = 24.0
-margin_top = 560.0
-margin_right = 94.0
-margin_bottom = 580.0
+margin_left = 48.0
+margin_top = 8.0
+margin_right = 118.0
+margin_bottom = 33.0
 custom_fonts/font = SubResource( 6 )
 text = "Keys: 0"
 __meta__ = {
@@ -112,9 +127,31 @@ x_min = -64
 x_max = 64
 
 [node name="enemy3" parent="enemies" instance=ExtResource( 4 )]
-position = Vector2( 524, 531 )
-x_min = -256
-x_max = 224
+position = Vector2( 486, 530 )
+x_min = -255
+x_max = 130
+
+[node name="pinchos" type="Area2D" parent="enemies" groups=["enemy"]]
+
+[node name="shape2" type="CollisionShape2D" parent="enemies/pinchos" groups=["enemy"]]
+position = Vector2( 80.9062, 570 )
+shape = SubResource( 8 )
+
+[node name="shape3" type="CollisionShape2D" parent="enemies/pinchos" groups=["enemy"]]
+position = Vector2( 225, 567 )
+shape = SubResource( 9 )
+
+[node name="shape4" type="CollisionShape2D" parent="enemies/pinchos" groups=["enemy"]]
+position = Vector2( 680, 175.25 )
+shape = SubResource( 10 )
+
+[node name="shape5" type="CollisionShape2D" parent="enemies/pinchos" groups=["enemy"]]
+position = Vector2( 994.062, 177 )
+shape = SubResource( 11 )
+
+[node name="shape6" type="CollisionShape2D" parent="enemies/pinchos" groups=["enemy"]]
+position = Vector2( 799.188, 562.5 )
+shape = SubResource( 12 )
 
 [node name="player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 44, 429 )
