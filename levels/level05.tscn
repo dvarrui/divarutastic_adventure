@@ -1,0 +1,180 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://environ/tileset/tileset-wall.tres" type="TileSet" id=1]
+[ext_resource path="res://levels/level.gd" type="Script" id=2]
+[ext_resource path="res://actor/key/key.tscn" type="PackedScene" id=3]
+[ext_resource path="res://actor/enemies/enemy2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://actor/npc/npc.tscn" type="PackedScene" id=5]
+[ext_resource path="res://environ/tileset/tileset-decorator.tres" type="TileSet" id=6]
+[ext_resource path="res://assets/music/01-bach-little_fugue.mp3" type="AudioStream" id=7]
+[ext_resource path="res://actor/player/player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://environ/stairs/stairs.tscn" type="PackedScene" id=9]
+[ext_resource path="res://actor/door/door.tscn" type="PackedScene" id=10]
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/font/chava/Chava-Regular.otf"
+
+[sub_resource type="DynamicFont" id=6]
+font_data = SubResource( 5 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 4.5, 145 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 5.5, 147 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 7.5, 210 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 17.0938, 7 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 30, 6 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 256.5, 14.875 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 30.1875, 2.5 )
+
+[node name="level" type="Node2D"]
+script = ExtResource( 2 )
+room_n = "menu"
+room_s = "menu"
+room_e = "menu"
+room_w = "level04"
+
+[node name="tilemap" type="Node2D" parent="."]
+
+[node name="wall" type="TileMap" parent="tilemap"]
+scale = Vector2( 2, 2 )
+z_index = 2
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 0, 0, 65558, 0, 0, 65559, 0, 0, 65560, 0, 0, 65561, 0, 0, 65562, 0, 0, 65563, 0, 0, 65564, 0, 0, 65565, 0, 0, 65566, 0, 0, 65567, 0, 0, 131072, 0, 0, 131080, 0, 0, 131089, 0, 0, 131096, 0, 0, 131103, 0, 0, 196608, 0, 0, 196616, 14, 0, 196625, 14, 0, 196632, 14, 0, 196639, 0, 0, 262144, 0, 0, 262152, 14, 0, 262161, 14, 0, 262167, 4, 0, 262168, 14, 0, 262175, 0, 0, 327680, 0, 0, 327688, 14, 0, 327697, 14, 0, 327704, 14, 0, 327711, 0, 0, 393216, 0, 0, 393224, 14, 0, 393233, 14, 0, 393240, 14, 0, 458752, 0, 0, 458760, 14, 0, 458769, 14, 0, 458776, 14, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524296, 14, 0, 524305, 14, 0, 524312, 14, 0, 524318, 0, 0, 524319, 0, 0, 589824, 0, 0, 589832, 14, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589841, 14, 0, 589848, 14, 0, 589854, 0, 0, 589855, 0, 0, 655360, 0, 0, 655368, 14, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655377, 14, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655384, 14, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 655391, 0, 0, 720904, 14, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720913, 14, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720920, 14, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786456, 14, 0, 786463, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851992, 14, 0, 851999, 0, 0, 983039, 13, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917528, 14, 0, 917535, 0, 0, 1048575, 13, 0, 983040, 0, 0, 983041, 0, 0, 983042, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983046, 0, 0, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983053, 0, 0, 983054, 0, 0, 983061, 0, 0, 983062, 0, 0, 983064, 14, 0, 983071, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048607, 0, 0, 1114112, 0, 0, 1114113, 0, 0, 1114114, 0, 0, 1114115, 0, 0, 1114116, 0, 0, 1114117, 0, 0, 1114118, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1114127, 17, 0, 1114128, 17, 0, 1114129, 17, 0, 1114130, 17, 0, 1114131, 17, 0, 1114132, 17, 0, 1114133, 17, 0, 1114134, 17, 0, 1114135, 17, 0, 1114136, 17, 0, 1114137, 17, 0, 1114138, 17, 0, 1114139, 17, 0, 1114140, 17, 0, 1114141, 17, 0, 1114142, 17, 0, 1114143, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1179677, 0, 0, 1179678, 0, 0, 1179679, 0, 0 )
+
+[node name="back" type="TileMap" parent="tilemap"]
+modulate = Color( 0.32549, 0.32549, 0.32549, 1 )
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 1900589, 3, 0 )
+
+[node name="front" type="TileMap" parent="tilemap"]
+scale = Vector2( 2, 2 )
+z_index = 10
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 1900589, 3, 0 )
+
+[node name="canvas" type="CanvasLayer" parent="tilemap"]
+layer = -2
+
+[node name="color" type="ColorRect" parent="tilemap/canvas"]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="effects" type="Node2D" parent="."]
+
+[node name="music" type="AudioStreamPlayer" parent="effects"]
+stream = ExtResource( 7 )
+volume_db = -20.091
+autoplay = true
+
+[node name="keys" type="Label" parent="effects"]
+margin_left = 48.0
+margin_top = 8.0
+margin_right = 118.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 6 )
+text = "Keys: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="temp" type="Node2D" parent="."]
+
+[node name="platforms" type="Node2D" parent="."]
+
+[node name="door" parent="platforms" instance=ExtResource( 10 )]
+position = Vector2( 1008, 224 )
+
+[node name="stairs2" parent="platforms" instance=ExtResource( 9 )]
+
+[node name="shape" type="CollisionShape2D" parent="platforms/stairs2"]
+position = Vector2( 271.5, 240 )
+shape = SubResource( 13 )
+
+[node name="shape2" type="CollisionShape2D" parent="platforms/stairs2"]
+position = Vector2( 559.5, 238 )
+shape = SubResource( 14 )
+
+[node name="shape3" type="CollisionShape2D" parent="platforms/stairs2"]
+position = Vector2( 786.5, 306 )
+shape = SubResource( 15 )
+
+[node name="keys" type="Node2D" parent="."]
+
+[node name="key1" parent="keys" instance=ExtResource( 3 )]
+position = Vector2( 718, 464 )
+
+[node name="key2" parent="keys" instance=ExtResource( 3 )]
+position = Vector2( 52, 532 )
+
+[node name="key3" parent="keys" instance=ExtResource( 3 )]
+position = Vector2( 80, 244 )
+
+[node name="key4" parent="keys" instance=ExtResource( 3 )]
+position = Vector2( 464, 401 )
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="enemy2" parent="enemies" instance=ExtResource( 4 )]
+position = Vector2( 908, 306 )
+speed = 30
+x_min = -32
+x_max = 32
+
+[node name="enemy3" parent="enemies" instance=ExtResource( 4 )]
+position = Vector2( 107, 242 )
+x_min = -64
+x_max = 64
+
+[node name="pinchos" type="Area2D" parent="enemies" groups=["enemy"]]
+
+[node name="shape2" type="CollisionShape2D" parent="enemies/pinchos" groups=["enemy"]]
+position = Vector2( 80.9062, 570 )
+shape = SubResource( 8 )
+
+[node name="shape3" type="CollisionShape2D" parent="enemies/pinchos" groups=["enemy"]]
+position = Vector2( 225, 567 )
+shape = SubResource( 9 )
+
+[node name="shape4" type="CollisionShape2D" parent="enemies/pinchos" groups=["enemy"]]
+position = Vector2( 731.5, 576.875 )
+shape = SubResource( 10 )
+
+[node name="shape6" type="CollisionShape2D" parent="enemies/pinchos" groups=["enemy"]]
+position = Vector2( 799.188, 562.5 )
+shape = SubResource( 12 )
+
+[node name="npc" parent="enemies" instance=ExtResource( 5 )]
+position = Vector2( 142, 399 )
+text = "Escala por las cuerdas"
+
+[node name="player" parent="." instance=ExtResource( 8 )]
+position = Vector2( 19, 399 )
+z_index = 4
