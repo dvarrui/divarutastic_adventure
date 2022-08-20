@@ -1,2 +1,6 @@
-# godot_divarutastic_adventure
-Godot project: Divarutastic Adventure
+# Divarutastic Adventure
+
+* Aarón Vargas Jorge: Game design and art
+* David Vargas Ruiz: Programming
+
+2020
