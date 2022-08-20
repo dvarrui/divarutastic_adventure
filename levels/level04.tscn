@@ -127,7 +127,7 @@ x_min = -64
 x_max = 64
 
 [node name="enemy3" parent="enemies" instance=ExtResource( 4 )]
-position = Vector2( 486, 530 )
+position = Vector2( 516, 532 )
 x_min = -255
 x_max = 130
 

@@ -3,7 +3,7 @@ extends Area2D
 export var speed = 50
 export var x_min = -100
 export var x_max = 100
-export var direction = 1
+export var direction = -1
 var origin = Vector2.ZERO
 
 func _ready():
@@ -18,14 +18,19 @@ func _on_enemy2_body_entered(body):
 		body.game_over()
 
 func _process(delta):
-	if direction > 0:
-		position.x += speed * direction * delta
-		$anim.flip_h = true
-		$anim.position.x = -3
-	else:
-		position.x += speed * direction * delta
+	var x_limit_max = origin.x + x_max
+	if position.x > x_limit_max:
+		position.x = x_limit_max 
+		direction = -1
 		$anim.flip_h = false
 		$anim.position.x = 3
-	if position.x > (origin.x+x_max) or position.x < (origin.x+x_min):
-		# Cambio de dirección
-		direction = direction * (-1)
+
+	var x_limit_min = origin.x + x_min
+	if position.x < x_limit_min:
+		position.x = x_limit_min
+		direction = 1
+		$anim.flip_h = true
+		$anim.position.x = -3
+
+	position.x += speed * direction * delta
+
