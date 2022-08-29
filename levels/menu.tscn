@@ -64,9 +64,9 @@ __meta__ = {
 }
 
 [node name="v_container" type="VBoxContainer" parent="texts/margin"]
-margin_top = 67.0
+margin_top = 98.0
 margin_right = 769.0
-margin_bottom = 529.0
+margin_bottom = 499.0
 size_flags_vertical = 4
 alignment = 1
 __meta__ = {
@@ -75,7 +75,7 @@ __meta__ = {
 
 [node name="title" type="Label" parent="texts/margin/v_container"]
 margin_right = 769.0
-margin_bottom = 119.0
+margin_bottom = 58.0
 custom_fonts/font = SubResource( 6 )
 text = "Divarutastic
 "
@@ -87,9 +87,9 @@ __meta__ = {
 }
 
 [node name="subtitle" type="Label" parent="texts/margin/v_container"]
-margin_top = 123.0
+margin_top = 62.0
 margin_right = 769.0
-margin_bottom = 184.0
+margin_bottom = 123.0
 custom_fonts/font = SubResource( 7 )
 text = "Adventure
 "
@@ -99,9 +99,9 @@ __meta__ = {
 }
 
 [node name="inputs" type="Label" parent="texts/margin/v_container"]
-margin_top = 188.0
+margin_top = 127.0
 margin_right = 769.0
-margin_bottom = 269.0
+margin_bottom = 208.0
 custom_fonts/font = SubResource( 5 )
 text = "New Game (N)
 Quit (Q)"
@@ -111,9 +111,9 @@ __meta__ = {
 }
 
 [node name="authors" type="Label" parent="texts/margin/v_container"]
-margin_top = 273.0
+margin_top = 212.0
 margin_right = 769.0
-margin_bottom = 462.0
+margin_bottom = 401.0
 custom_fonts/font = SubResource( 4 )
 text = "
 

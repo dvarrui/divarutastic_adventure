@@ -1,0 +1,138 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://environ/tileset/tileset-decorator.tres" type="TileSet" id=1]
+[ext_resource path="res://environ/tileset/tileset-wall.tres" type="TileSet" id=2]
+[ext_resource path="res://levels/level.gd" type="Script" id=3]
+[ext_resource path="res://assets/music/01-bach-little_fugue.mp3" type="AudioStream" id=4]
+[ext_resource path="res://actor/player/player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://actor/enemies/enemy2.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/font/chava/Chava-Regular.otf"
+
+[sub_resource type="DynamicFont" id=6]
+font_data = SubResource( 5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 247.75, 8 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 10.25, 109.5 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 467.5, 27.3125 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 9.90625, 48.625 )
+
+[node name="level" type="Node2D"]
+script = ExtResource( 3 )
+room_n = "menu"
+room_s = "menu"
+room_e = "level04"
+room_w = "menu"
+
+[node name="tilemap" type="Node2D" parent="."]
+
+[node name="wall" type="TileMap" parent="tilemap"]
+scale = Vector2( 2, 2 )
+z_index = 2
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 14, 0, 0, 65536, 0, 0, 65550, 0, 0, 131072, 0, 0, 131086, 0, 0, 196608, 0, 0, 196622, 0, 0, 262144, 0, 0, 262158, 0, 0, 262167, 4, 0, 262169, 4, 0, 262170, 5, 0, 327680, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0, 327707, 0, 0, 327708, 0, 0, 327709, 0, 0, 393216, 0, 0, 393230, 18, 0, 393231, 18, 0, 393232, 18, 0, 393233, 18, 0, 393234, 18, 0, 393235, 18, 0, 393236, 18, 0, 393237, 18, 0, 393238, 18, 0, 393239, 18, 0, 393240, 18, 0, 393241, 18, 0, 393242, 18, 0, 393243, 18, 0, 393244, 18, 0, 393245, 0, 0, 458752, 0, 0, 458780, 19, 0, 458781, 0, 0, 524288, 0, 0, 524308, 5, 0, 524316, 19, 0, 524317, 0, 0, 524318, 0, 0, 524319, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 720924, 19, 0, 720925, 0, 0, 720926, 0, 0, 720927, 0, 0, 786432, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786460, 19, 0, 786461, 0, 0, 851968, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851996, 19, 0, 851997, 0, 0, 983039, 13, 0, 917504, 0, 0, 917511, 0, 0, 917532, 19, 0, 917533, 0, 0, 1048575, 13, 0, 983040, 0, 0, 983047, 0, 0, 983068, 19, 0, 983069, 0, 0, 1048576, 0, 0, 1048583, 0, 0, 1048604, 19, 0, 1048605, 0, 0, 1114112, 0, 0, 1114113, 17, 0, 1114114, 17, 0, 1114115, 17, 0, 1114116, 17, 0, 1114117, 17, 0, 1114118, 17, 0, 1114119, 0, 0, 1114120, 17, 0, 1114121, 17, 0, 1114122, 17, 0, 1114123, 17, 0, 1114124, 17, 0, 1114125, 17, 0, 1114126, 17, 0, 1114127, 17, 0, 1114128, 17, 0, 1114129, 17, 0, 1114130, 17, 0, 1114131, 17, 0, 1114132, 17, 0, 1114133, 17, 0, 1114134, 17, 0, 1114135, 17, 0, 1114136, 17, 0, 1114137, 17, 0, 1114138, 17, 0, 1114139, 17, 0, 1114140, 17, 0, 1114141, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1179677, 0, 0 )
+
+[node name="back" type="TileMap" parent="tilemap"]
+modulate = Color( 0.32549, 0.32549, 0.32549, 1 )
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+
+[node name="front" type="TileMap" parent="tilemap"]
+scale = Vector2( 2, 2 )
+z_index = 10
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+
+[node name="canvas" type="CanvasLayer" parent="tilemap"]
+layer = -2
+
+[node name="color" type="ColorRect" parent="tilemap/canvas"]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="effects" type="Node2D" parent="."]
+
+[node name="music" type="AudioStreamPlayer" parent="effects"]
+stream = ExtResource( 4 )
+volume_db = -20.091
+autoplay = true
+
+[node name="keys" type="Label" parent="effects"]
+margin_left = 48.0
+margin_top = 8.0
+margin_right = 85.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 6 )
+text = "Keys: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="temp" type="Node2D" parent="."]
+
+[node name="platforms" type="Node2D" parent="."]
+
+[node name="keys" type="Node2D" parent="."]
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="enemy2" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 832, 356 )
+x_min = -1000
+
+[node name="pinchos" type="Area2D" parent="enemies" groups=["enemy"]]
+position = Vector2( 50, 0 )
+
+[node name="shape" type="CollisionShape2D" parent="enemies/pinchos"]
+position = Vector2( 653.25, 194 )
+shape = SubResource( 7 )
+
+[node name="shape2" type="CollisionShape2D" parent="enemies/pinchos"]
+position = Vector2( 876.75, 469.5 )
+shape = SubResource( 8 )
+
+[node name="shape3" type="CollisionShape2D" parent="enemies/pinchos"]
+position = Vector2( 435.5, 591.312 )
+shape = SubResource( 9 )
+
+[node name="shape4" type="CollisionShape2D" parent="enemies/pinchos"]
+position = Vector2( 877.094, 232.625 )
+shape = SubResource( 10 )
+
+[node name="enemy3" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 830, 331 )
+x_min = -1000
+
+[node name="enemy4" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 830, 307 )
+x_min = -1000
+
+[node name="enemy5" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 830, 283 )
+x_min = -1000
+
+[node name="player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 236, 28 )
+z_index = 4
