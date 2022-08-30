@@ -24,6 +24,7 @@ func update_keys():
 	var level = get_parent().get_parent()
 	level.update_keys(0)
 	change_state("opening_1")
+	$audio.play()
 
 func update_state(delta):
 	timeout -= delta
