@@ -111,6 +111,7 @@ __meta__ = {
 
 [node name="door" parent="platforms" instance=ExtResource( 10 )]
 position = Vector2( 1008, 224 )
+duration = 0.1
 
 [node name="stairs2" parent="platforms" instance=ExtResource( 9 )]
 

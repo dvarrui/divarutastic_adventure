@@ -8,13 +8,13 @@
 atlas = ExtResource( 1 )
 region = Rect2( 176, 96, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 1 )
-region = Rect2( 224, 96, 16, 32 )
-
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
 region = Rect2( 208, 96, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 224, 96, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
@@ -27,14 +27,14 @@ animations = [ {
 "name": "closed",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 16 ) ],
-"loop": false,
-"name": "opened",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 17 ) ],
 "loop": true,
 "name": "opening_2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 16 ) ],
+"loop": false,
+"name": "opened",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 13 ) ],
@@ -54,6 +54,7 @@ radius = 30.0
 
 [node name="door" type="Node2D" groups=["door"]]
 script = ExtResource( 2 )
+duration = 0.1
 
 [node name="anim" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
