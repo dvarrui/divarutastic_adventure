@@ -28,6 +28,8 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("player_jump") and is_on_floor():
 		speed.y = -UP_FORCE
+		$audio.play()
+
 
 func _physics_process(delta):
 	_get_input_direction()

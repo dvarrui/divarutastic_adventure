@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://environ/spark/spark.gd" type="Script" id=1]
 [ext_resource path="res://assets/tileset.png" type="Texture" id=2]
+[ext_resource path="res://assets/sounds/pick.wav" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -30,11 +31,15 @@ lifetime = 5
 
 [node name="anim" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="timer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
