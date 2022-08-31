@@ -39,9 +39,9 @@ func change_level(dir):
 		room_name = room_w
 		MyConfig.position.x = MyConfig.screen_size().x -offset
 		
-	print("[DEBUG.2] change_level to room_name ", room_name)
 	if room_name.length() == 0:
 		get_tree().change_scene("res://levels/menu.tscn")
 	else:
+		print("[DEBUG.2] change_level to room_name ", room_name)
 		get_tree().change_scene("res://levels/"+room_name+".tscn")
 

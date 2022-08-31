@@ -27,7 +27,7 @@ extents = Vector2( 30.25, 7.5 )
 [node name="level" type="Node2D"]
 script = ExtResource( 2 )
 room_n = "level93"
-room_s = "level93"
+room_s = "level13"
 room_e = "level04"
 room_w = "menu"
 
@@ -108,7 +108,7 @@ position = Vector2( 175, 531 )
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="enemy2" parent="enemies" instance=ExtResource( 4 )]
-position = Vector2( 571, 466 )
+position = Vector2( 571, 468 )
 
 [node name="pinchos" type="Area2D" parent="enemies" groups=["enemy"]]
 position = Vector2( 50, 0 )
