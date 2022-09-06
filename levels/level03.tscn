@@ -108,7 +108,7 @@ position = Vector2( 175, 531 )
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="enemy2" parent="enemies" instance=ExtResource( 4 )]
-position = Vector2( 571, 466 )
+position = Vector2( 571, 467 )
 
 [node name="pinchos" type="Area2D" parent="enemies" groups=["enemy"]]
 position = Vector2( 50, 0 )
