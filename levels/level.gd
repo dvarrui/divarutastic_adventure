@@ -10,6 +10,7 @@ func _ready():
 	update_keys(0)
 	if MyConfig.position.x != -1:
 		$player.position = MyConfig.position
+	print_debug("[DEBUG] current ", MyConfig.room_name)
 
 func _process(delta):
 	if Input.is_action_just_pressed("game_menu"):
@@ -20,7 +21,6 @@ func update_keys(value):
 	$effects/keys.text = "Keys: " + str(MyConfig.keys)
 
 func change_level(dir):
-	print("[DEBUG.1] change_level to dir ", dir)
 	if dir == "menu":
 		get_tree().change_scene("res://levels/menu.tscn")
 
@@ -38,10 +38,10 @@ func change_level(dir):
 	elif dir == "W":
 		room_name = room_w
 		MyConfig.position.x = MyConfig.screen_size().x -offset
-		
+
 	if room_name.length() == 0:
 		get_tree().change_scene("res://levels/menu.tscn")
 	else:
-		print("[DEBUG.2] change_level to room_name ", room_name)
+		print_debug("[DEBUG] dir ", dir, ", change to ", room_name)
+		MyConfig.room_name = room_name
 		get_tree().change_scene("res://levels/"+room_name+".tscn")
-

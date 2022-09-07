@@ -14,6 +14,7 @@ func _process(delta):
 
 func start_new_game():
 	$effects/music.playing = false
+	MyConfig.room_name = first_room
 	get_tree().change_scene("res://levels/" + first_room + ".tscn")
 
 func close_game():

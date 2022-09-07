@@ -122,7 +122,7 @@ position = Vector2( 464, 401 )
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="enemy2" parent="enemies" instance=ExtResource( 4 )]
-position = Vector2( 554, 179 )
+position = Vector2( 554, 180 )
 x_min = -64
 x_max = 64
 
