@@ -6,13 +6,14 @@ export var room_e = ""
 export var room_w = ""
 
 func _ready():
-	get_node("effects/music").playing = true
+	$effects/music.play(MyConfig.music_time)
+	# $effects/music.playing = true
 	update_keys(0)
 	if MyConfig.position.x != -1:
 		$player.position = MyConfig.position
-	print_debug("[DEBUG] current ", MyConfig.room_name)
 
 func _process(delta):
+	MyConfig.music_time += delta
 	if Input.is_action_just_pressed("game_menu"):
 		get_tree().change_scene("res://levels/menu.tscn")
 
@@ -42,6 +43,6 @@ func change_level(dir):
 	if room_name.length() == 0:
 		get_tree().change_scene("res://levels/menu.tscn")
 	else:
-		print_debug("[DEBUG] dir ", dir, ", change to ", room_name)
+		print_debug("[DEBUG] ", MyConfig.room_name, " ", dir, "-> ", room_name)
 		MyConfig.room_name = room_name
 		get_tree().change_scene("res://levels/"+room_name+".tscn")

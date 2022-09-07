@@ -29,7 +29,7 @@ extents = Vector2( 9.90625, 48.625 )
 script = ExtResource( 2 )
 room_n = "menu"
 room_s = "menu"
-room_e = "level04"
+room_e = "menu"
 room_w = "menu"
 
 [node name="tilemap" type="Node2D" parent="."]
