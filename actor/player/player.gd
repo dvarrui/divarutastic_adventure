@@ -30,11 +30,10 @@ func _input(event):
 		speed.y = -UP_FORCE
 		$audio/jump.play()
 
-
 func _physics_process(delta):
 	_get_input_direction()
 	_update_speed(delta)
-	_update_motion(speed)
+	_update_motion()
 	_detect_screen_exited()
 
 func _get_input_direction():
@@ -106,7 +105,7 @@ func _update_speed_on_air(delta):
 	speed.y += DOWN_FORCE * delta
 	speed.y = clamp(speed.y, MAX_SPEED_UP, MAX_SPEED_DOWN)
 
-func _update_motion(speed):
+func _update_motion():
 	var motion = Vector2()
 	motion.x = speed.x * direction.x
 	motion.y = speed.y
@@ -172,4 +171,13 @@ func _on_detect_area_exited(area):
 		on_stairs = false
 
 func game_over():
+	# spawn_spark(position)
 	get_parent().change_level("menu")
+
+func spawn_spark(position):
+	var data = { "type": "spark", 
+			 "x": self.position.x,
+			 "y": self.position.y }
+	var level = self.get_parent()
+	Loader.create_new_object(data, level)
+	queue_free()

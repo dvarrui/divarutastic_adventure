@@ -182,16 +182,24 @@ position = Vector2( 751, 147 )
 [node name="murcielago" parent="enemies" instance=ExtResource( 10 )]
 position = Vector2( 370, 345 )
 z_index = 2
+mode = "y"
 
 [node name="murcielago2" parent="enemies" instance=ExtResource( 10 )]
 position = Vector2( 849, 461 )
 z_index = 2
 x_min = -90
+y_min = -32
+y_max = 32
+mode = "y"
 
 [node name="murcielago3" parent="enemies" instance=ExtResource( 10 )]
 position = Vector2( 944, 464 )
 z_index = 2
 x_min = -90
+y_min = -32
+y_max = 32
+direction = 1
+mode = "y"
 
 [node name="pinchos" type="Area2D" parent="enemies" groups=["enemy"]]
 

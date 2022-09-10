@@ -7,7 +7,7 @@ func _on_coin_body_entered(body):
 	var level = self.get_parent().get_parent()
 	level.update_keys(1)
 	spawn_spark(self.position)
-	
+
 func spawn_spark(position):
 	var data = { "type": "spark", 
 			 "x": self.position.x,
