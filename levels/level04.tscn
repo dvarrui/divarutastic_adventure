@@ -129,7 +129,7 @@ x_max = 64
 [node name="enemy3" parent="enemies" instance=ExtResource( 4 )]
 position = Vector2( 516, 532 )
 x_min = -255
-x_max = 130
+x_max = 224
 
 [node name="pinchos" type="Area2D" parent="enemies" groups=["enemy"]]
 
