@@ -22,7 +22,7 @@ func update_state(delta):
 		change_state("break_3")
 		$body/shape.set_disabled(true)
 	if state == "break_1":
-		$audio.play(0.04)
+		$audio.play(0.5)
 		change_state("break_2")
 
 func change_state(new_state):
