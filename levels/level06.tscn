@@ -42,7 +42,7 @@ extents = Vector2( 88.375, 14.875 )
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 30.1875, 2.5 )
 
-[node name="level" type="Node2D"]
+[node name="level2" type="Node2D"]
 script = ExtResource( 2 )
 room_n = "menu"
 room_s = "level16"
