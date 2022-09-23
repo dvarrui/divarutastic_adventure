@@ -83,9 +83,6 @@ layer = -2
 margin_right = 1024.0
 margin_bottom = 600.0
 color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="effects" type="Node2D" parent="."]
 
@@ -172,7 +169,7 @@ position = Vector2( 799.188, 562.5 )
 shape = SubResource( 12 )
 
 [node name="npc" parent="enemies" instance=ExtResource( 5 )]
-position = Vector2( 142, 399 )
+position = Vector2( 142, 400 )
 text = "Escala por las cuerdas"
 
 [node name="player" parent="." instance=ExtResource( 8 )]
