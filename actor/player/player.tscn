@@ -5,6 +5,10 @@
 [ext_resource path="res://assets/tileset.png" type="Texture" id=3]
 [ext_resource path="res://assets/sounds/hit.wav" type="AudioStream" id=4]
 
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 3 )
+region = Rect2( 112, 96, 16, 16 )
+
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 3 )
 region = Rect2( 64, 64, 16, 16 )
@@ -49,22 +53,6 @@ region = Rect2( 128, 96, 16, 16 )
 atlas = ExtResource( 3 )
 region = Rect2( 144, 96, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=53]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 128, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=54]
-atlas = ExtResource( 3 )
-region = Rect2( 16, 128, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=55]
-atlas = ExtResource( 3 )
-region = Rect2( 32, 128, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=56]
-atlas = ExtResource( 3 )
-region = Rect2( 48, 128, 16, 16 )
-
 [sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 112, 16, 16 )
@@ -81,9 +69,21 @@ region = Rect2( 32, 112, 16, 16 )
 atlas = ExtResource( 3 )
 region = Rect2( 48, 112, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=57]
+[sub_resource type="AtlasTexture" id=53]
 atlas = ExtResource( 3 )
-region = Rect2( 112, 96, 16, 16 )
+region = Rect2( 0, 128, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 128, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 128, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 128, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 3 )
@@ -103,6 +103,11 @@ region = Rect2( 112, 80, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
+"frames": [ SubResource( 57 ) ],
+"loop": true,
+"name": "fall",
+"speed": 2.0
+}, {
 "frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "idle",
@@ -113,20 +118,15 @@ animations = [ {
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
-"loop": true,
-"name": "stairs-idle",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ) ],
 "loop": true,
 "name": "stairs",
 "speed": 4.0
 }, {
-"frames": [ SubResource( 57 ) ],
+"frames": [ SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
 "loop": true,
-"name": "fall",
-"speed": 2.0
+"name": "stairs-idle",
+"speed": 5.0
 }, {
 "frames": [ SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ) ],
 "loop": true,
@@ -148,7 +148,7 @@ position = Vector2( 0, -4 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 10 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="shape" type="CollisionShape2D" parent="."]

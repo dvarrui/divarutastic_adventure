@@ -2,6 +2,7 @@ extends Node
 
 var music_time = 0
 var keys = 0
+var life = 2
 var position = Vector2(-1, -1)
 var room_name = "menu"
 var history = {}

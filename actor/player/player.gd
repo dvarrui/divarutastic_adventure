@@ -171,13 +171,13 @@ func _on_detect_area_exited(area):
 		on_stairs = false
 
 func game_over():
-	# spawn_spark(position)
-	get_parent().change_level("menu")
+	spawn_hurt(position)
+	self.position = MyConfig.position
+	# get_parent().change_level("menu")
 
-func spawn_spark(position):
-	var data = { "type": "spark", 
+func spawn_hurt(position):
+	var data = { "type": "hurt", 
 			 "x": self.position.x,
 			 "y": self.position.y }
 	var level = self.get_parent()
 	Loader.create_new_object(data, level)
-	queue_free()
