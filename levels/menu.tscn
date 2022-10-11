@@ -29,11 +29,9 @@ script = ExtResource( 1 )
 margin_right = 1024.0
 margin_bottom = 600.0
 color = Color( 0.0235294, 0.0235294, 0.0235294, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="tilemap" type="Node2D" parent="."]
+position = Vector2( 0, -12 )
 
 [node name="wall" type="TileMap" parent="tilemap"]
 scale = Vector2( 2, 2 )
@@ -110,7 +108,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="authors" type="Label" parent="texts/margin/v_container"]
+[node name="credits" type="Label" parent="texts/margin/v_container"]
 margin_top = 212.0
 margin_right = 769.0
 margin_bottom = 401.0
@@ -119,12 +117,21 @@ text = "
 
 Aaron Vargas Jorge - Art and Game Desing
 David Vargas Ruiz - Programing
-
-Copyright (c) 2022"
+godotengine - game engine
+freesound.org - sounds"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="version" type="Label" parent="texts"]
+margin_left = 863.0
+margin_top = 556.0
+margin_right = 1006.0
+margin_bottom = 587.0
+text = "Version 0.1.0
+Copyright (c) 2022"
+align = 2
 
 [node name="effects" type="Node2D" parent="."]
 
