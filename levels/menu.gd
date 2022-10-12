@@ -4,7 +4,7 @@ export var first_room = "level01"
 
 func _ready():
 	MyConfig.reset()
-	$effects/music.playing = false
+	$effects/music.playing = true
 	
 func _process(delta):
 	if Input.is_action_just_pressed("game_new"):

@@ -1,6 +1,6 @@
 extends Node2D
 
-export var text = "Escribe tu texto!"
+export var text = "Escribe tu \ntexto!"
 
 func _ready():
 	self.set_text(text)

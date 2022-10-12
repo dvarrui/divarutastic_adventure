@@ -1,6 +1,6 @@
 extends Node2D
 
-export var text = "Escribe tu texto aquí!"
+export var text = "Escribe tu texto\naquí!"
 
 func _ready():
 	$detect/dialog.set_text(text)

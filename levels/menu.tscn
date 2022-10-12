@@ -137,3 +137,4 @@ align = 2
 
 [node name="music" type="AudioStreamPlayer2D" parent="effects"]
 stream = ExtResource( 5 )
+volume_db = -16.0

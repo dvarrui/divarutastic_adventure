@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+var state = "alive"
 var input_direction = Vector2.ZERO # Input XY direction
 var direction = Vector2.ZERO       # Current XY direction
 var speed = Vector2.ZERO           # Character speed
@@ -31,6 +32,8 @@ func _input(event):
 		$audio/jump.play()
 
 func _physics_process(delta):
+	if state == "hide":
+		return
 	_get_input_direction()
 	_update_speed(delta)
 	_update_motion()
@@ -173,6 +176,7 @@ func _on_detect_area_exited(area):
 func game_over():
 	spawn_hurt(position)
 	self.position = MyConfig.position
+	$timer/unhide.start(5)
 	# get_parent().change_level("menu")
 
 func spawn_hurt(position):
@@ -181,3 +185,6 @@ func spawn_hurt(position):
 			 "y": self.position.y }
 	var level = self.get_parent()
 	Loader.create_new_object(data, level)
+
+func _on_unhide_timeout():
+	state = "alive"

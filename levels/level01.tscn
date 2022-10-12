@@ -60,9 +60,6 @@ layer = -2
 margin_right = 1024.0
 margin_bottom = 600.0
 color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="effects" type="Node2D" parent="."]
 
@@ -85,17 +82,21 @@ text = "Keys: 0"
 
 [node name="door" parent="platforms" instance=ExtResource( 10 )]
 position = Vector2( 1009, 448 )
+keys = 2
 
 [node name="keys" type="Node2D" parent="."]
 
-[node name="coin2" parent="keys" instance=ExtResource( 3 )]
+[node name="coin" parent="keys" instance=ExtResource( 3 )]
 position = Vector2( 975, 274 )
+
+[node name="coin2" parent="keys" instance=ExtResource( 3 )]
+position = Vector2( 626, 400 )
 
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="npc" parent="enemies" instance=ExtResource( 12 )]
 position = Vector2( 404, 432 )
-text = "¡Coge la llave!"
+text = "¡Coge las llaves!."
 
 [node name="player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 110, 465 )

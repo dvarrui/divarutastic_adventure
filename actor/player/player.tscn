@@ -148,7 +148,7 @@ position = Vector2( 0, -4 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 10 )
 animation = "idle"
-frame = 1
+frame = 4
 playing = true
 
 [node name="shape" type="CollisionShape2D" parent="."]
@@ -171,5 +171,10 @@ volume_db = -19.0
 [node name="hit" type="AudioStreamPlayer2D" parent="audio"]
 stream = ExtResource( 4 )
 
+[node name="timer" type="Node2D" parent="."]
+
+[node name="unhide" type="Timer" parent="timer"]
+
 [connection signal="area_entered" from="detect" to="." method="_on_detect_area_entered"]
 [connection signal="area_exited" from="detect" to="." method="_on_detect_area_exited"]
+[connection signal="timeout" from="timer/unhide" to="." method="_on_unhide_timeout"]
