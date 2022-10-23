@@ -6,17 +6,26 @@ export var room_e = ""
 export var room_w = ""
 
 func _ready():
-	$effects/music.play(MyConfig.music_time)
+	init_music()
 	update_keys(0)
 	if MyConfig.position.x != -1:
 		$player.position = MyConfig.position
 
 func _process(delta):
-	MyConfig.music_time += delta
+	update_music(delta)
 	if Input.is_action_just_pressed("game_menu"):
 # warning-ignore:return_value_discarded
 		get_tree().change_scene("res://levels/menu.tscn")
 
+func init_music():
+	$effects/music.play(MyConfig.music_time)
+	
+func update_music(delta):
+	var audio_max = 205
+	MyConfig.music_time += delta
+	if MyConfig.music_time > audio_max:
+		MyConfig.music_time -= audio_max
+	
 func update_keys(value):
 	MyConfig.keys = MyConfig.keys + value
 	$effects/keys.text = "Keys: " + str(MyConfig.keys)
