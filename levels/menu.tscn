@@ -115,8 +115,8 @@ margin_bottom = 401.0
 custom_fonts/font = SubResource( 4 )
 text = "
 
-Aaron Vargas Jorge - Art and Game Desing
-David Vargas Ruiz - Programing
+Aaron Vargas Jorge - Art and Game Design
+David Vargas Ruiz - Programming
 godotengine - game engine
 freesound.org - sounds"
 align = 1
@@ -129,7 +129,7 @@ margin_left = 863.0
 margin_top = 556.0
 margin_right = 1006.0
 margin_bottom = 587.0
-text = "Version 0.1.0
+text = "Version 0.2
 Copyright (c) 2022"
 align = 2
 
